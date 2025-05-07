@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Página Pessoal - Aureliano A. de Oliveira",
   description: "Página com informações pessoais e portfólio de Aureliano A. de Oliveira",	
+  icons: {
+    icon: "favicon.ico",
+  },
 };
 
 export default function RootLayout({

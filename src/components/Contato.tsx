@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+
 
 export const Contato = () => {
     const form = useRef<HTMLFormElement>(null);
@@ -36,6 +38,7 @@ export const Contato = () => {
     return (
         <div className="flex items-center justify-center h-full bg-gray-900 text-white">
             <div className="flex flex-col flex-2/3 items-center justify-center">
+            <motion.div className="flex flex-col items-center justify-center flex-grow" initial={{ opacity: 0}} animate={{ opacity: 1, y:0 }} exit={{ opacity: 0}} transition={{ duration: 1 }}>
                 <h1 className="text-4xl font-bold mb-6">Entre em Contato</h1>
                 <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full max-w-lg">
                     <input
@@ -85,19 +88,22 @@ export const Contato = () => {
                         Enviar
                     </button>
                 </form>
+                </motion.div>
             </div>
             <div className="flex flex-col flex-1/3 h-screen w-full p-8 bg-black">
+            <motion.div className="flex flex-col" initial={{ opacity: 0}} animate={{ opacity: 1, y:0 }} exit={{ opacity: 0}} transition={{ duration: 1 }}>
                 <h1 className="text-4xl font-bold mb-6">Contatos</h1>
                 <div>Telefone: (87)99108-1827</div>
-                <div>Email: <a>aureliano.oliveira2011@gmail.com</a></div>
+                <div className="text-sm">Email: <a>aureliano.oliveira2011@gmail.com</a></div>
                 <div className="flex flex-col items-center justify-center mt-8">
                     <div onClick={whatsApp} className="flex justify-center items-center p-4 bg-green-600 cursor-pointer rounded-md text-lg font-bold hover:bg-green-700 transition duration-300">
                         Contrate-me<img className="mx-2 h-6" src="/media/whatsapp.png"></img>
                     </div>
                     <a href="https://www.linkedin.com/in/aurelianooliveira/" target="_blank" className="mt-4 p-4 text-lg flex items-center">Linked <img src="/media/linkedin.png" className="inline h-4"></img></a>
                 </div>
-
+                </motion.div>
             </div>
+            
         </div>
     );
 };

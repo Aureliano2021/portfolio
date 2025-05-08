@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export const Servicos = ({ setActiveButton }: { setActiveButton: (id: number) => void }) => {
     
     const handleContatoClick = () => {
@@ -13,7 +15,7 @@ export const Servicos = ({ setActiveButton }: { setActiveButton: (id: number) =>
       {
         title: "Consultoria Técnica",
         description: "Suporte e consultoria em tecnologias como ServiceNow.",
-        tecnology: ["ITSM","Client Script","Business Rules", "GlideRecord (básico)", "Notifications", "Knowledge Base", "Scheduled Jobs"]
+        tecnology: ["ITSM","Client Script","Business Rules", "GlideRecord (básico)", "Knowledge Base", "Scheduled Jobs"]
       },
       {
         title: "Manutenção e Suporte",
@@ -27,6 +29,8 @@ export const Servicos = ({ setActiveButton }: { setActiveButton: (id: number) =>
         <h1 className="text-4xl font-bold mb-6">Meus Serviços</h1>
         <div className="grid grid-cols-3 gap-8">
           {services.map((service, index) => (
+            
+            <motion.div className="flex flex-col items-center justify-center flex-grow" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y:0 }} exit={{ opacity: 0, y: 50 }} transition={{ duration: 1 }}>
             <div
               key={index}
               className="p-6 border border-gray-700 rounded-lg hover:shadow-lg transition"
@@ -41,11 +45,15 @@ export const Servicos = ({ setActiveButton }: { setActiveButton: (id: number) =>
                 ))}
               </ul>
             </div>
+            </motion.div>
           ))}
         </div>
+        
+        <motion.div className="flex flex-col items-center justify-center flex-grow" initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y:0 }} exit={{ opacity: 0, y: -100 }} transition={{ duration: 1 }}>
         <button onClick={handleContatoClick} className="mt-8 p-4 bg-blue-600 hover:bg-blue-700 rounded text-white font-bold cursor-pointer">
           Contrate-me
         </button>
+        </motion.div>
       </div>
     );
   };

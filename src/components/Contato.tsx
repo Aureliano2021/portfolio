@@ -37,7 +37,7 @@ export const Contato = () => {
         <div className="flex items-center justify-center h-full bg-gray-900 text-white">
             <div className="flex flex-col flex-2/3 items-center justify-center">
                 <h1 className="text-4xl font-bold mb-6">Entre em Contato</h1>
-                <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full max-w-md">
+                <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full max-w-lg">
                     <input
                         type="text"
                         value="Contato feito pelo portfólio"
@@ -51,20 +51,26 @@ export const Contato = () => {
                         className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
                         required
                     />
-                    <label className="mb-2">Empresa</label>
-                    <input
-                        type="text"
-                        name="enterprise"
-                        className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
-                        required
-                    />
-                    <label className="mb-2">E-mail</label>
-                    <input
-                        type="email"
-                        name="email"
-                        className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
-                        required
-                    />
+                    <div className="grid grid-cols-2">
+                        <div className="flex flex-col mr-2">
+                            <label className="mb-2">Empresa</label>
+                            <input
+                                type="text"
+                                name="enterprise"
+                                className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col ml-2">
+                            <label className="mb-2">E-mail</label>
+                            <input
+                                type="email"
+                                name="email"
+                                className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
+                                required
+                            />
+                        </div>
+                    </div>
                     <label className="mb-2">Mensagem</label>
                     <textarea
                         name="message"

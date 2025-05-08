@@ -25,7 +25,7 @@ export const Servicos = ({ setActiveButton }: { setActiveButton: (id: number) =>
     ];
   
     return (
-      <div className="flex flex-col items-center justify-center p-8 bg-gray-900 text-white">
+      <div className="flex flex-col items-center justify-center px-8 py-16 bg-gray-900 text-white">
         <h1 className="text-4xl font-bold mb-6">Meus Serviços</h1>
         <div className="grid grid-cols-3 gap-8">
           {services.map((service, index) => (

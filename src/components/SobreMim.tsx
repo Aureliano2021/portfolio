@@ -10,7 +10,7 @@ export const SobreMim = () => {
             transition={{ duration: 1 }}
         >
 
-        <div className="flex text-white">
+        <div className="flex">
             <div className="flex-2/3 p-16">
                 <h1 className="text-6xl font-semibold">Sobre mim</h1>
                 <p className="my-4">Sou formado em Análise e Desenvolvimento de Sistemas e estou em busca da minha primeira oportunidade profissional na área de desenvolvimento Web/Mobile. Tenho 31 anos, sou casado e amo muito minha esposa. Nasci na cidade de Sorocaba, onde passei minha infância. No entanto, foi no estado de Pernambuco que vivi a maior parte da minha vida, construindo minha trajetória pessoal e profissional.</p>

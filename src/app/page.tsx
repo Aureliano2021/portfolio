@@ -15,15 +15,15 @@ const Page = () => {
 
   return(
     <div className="flex w-screen h-screen">
-      <div className="w-64 h-full bg-gray-500">
+      <div className="w-64 h-full bg-gray-500 text-white">
         <MenuButton setActiveButton={setActiveButton}/>
       </div>
-      <div className="w-full h-full bg-gray-900">
+      <div className="w-full h-full bg-gray-900 text-white">
         <AnimatePresence mode="wait">
         {activeButton === 1 && (<InicioSection setActiveButton={setActiveButton}/>)}
         {activeButton === 2 && (<SobreMim />)}
         {activeButton === 3 && (<Portfolio />)}
-        {activeButton === 4 && (<Servicos />)}
+        {activeButton === 4 && (<Servicos setActiveButton={setActiveButton}/>)}
         {activeButton === 5 && (<Contato />)}
         {activeButton === 6 && (<Curriculo />)}
         </AnimatePresence>

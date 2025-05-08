@@ -5,7 +5,7 @@ export const InicioSection = ({ setActiveButton }: { setActiveButton: (id: numbe
         setActiveButton(3);
     };
     return (
-        <div className="flex flex-col items-center justify-between w-full h-full text-white text-center p-10">
+        <div className="flex flex-col items-center justify-between w-full h-full text-center p-10">
 
 
             <main>
@@ -16,7 +16,7 @@ export const InicioSection = ({ setActiveButton }: { setActiveButton: (id: numbe
                         Estou ingressando na área de <strong>Desenvolvimento Web Front-End</strong> em busca de novas oportunidades. Tenho conhecimento sobre ServiceNow, HTML, TailwindCSS, JavaScript/TypeScript e o básico em ReactJS.
                         Apaixonado por criar soluções inovadoras e entregar resultados de qualidade.
                     </p>
-                    <button onClick={handlePortfolioClick} className="px-6 py-3 bg-blue-500 text-white cursor-pointer rounded-md transition hover:bg-blue-600">
+                    <button onClick={handlePortfolioClick} className="px-6 py-3 bg-blue-500 cursor-pointer rounded-md transition hover:bg-blue-600">
                         Veja meu portfólio
                     </button>
                 </motion.div>

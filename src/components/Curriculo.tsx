@@ -158,7 +158,7 @@ export const Curriculo = () => {
                                     <td>{certification.instituicao}</td>
                                     <td>{certification.ch}</td>
                                     <td>{certification.ano}</td>
-                                    <td><a className="p-1.5 bg-blue-500 rounded-lg hover:bg-blue-600" href={certification.link}>Link</a></td>
+                                    <td><a className="p-1.5 bg-blue-500 rounded-lg hover:bg-blue-600" href={certification.link} target="_blank">Link</a></td>
                                 </tr>
                             ))}
                         </tbody>

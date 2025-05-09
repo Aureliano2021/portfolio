@@ -1,9 +1,30 @@
 import { motion } from "framer-motion";
 
 export const Curriculo = () => {
+    const hoje = new Date();
+    
+    const idade = () => {
+        let diaHoje = hoje.getDate();
+        let mesAtual = hoje.getMonth();
+        let anoAtual = hoje.getFullYear();
+        let idadeAtual:number;
+        const aniversario = {
+            dia: 22, mes: 3, ano: 1994,
+        };
+
+        if (mesAtual >= aniversario.mes){
+            if (mesAtual == aniversario.mes){
+                diaHoje >= aniversario.dia ? idadeAtual = anoAtual-aniversario.ano : idadeAtual = (anoAtual-aniversario.ano)-1
+            } else idadeAtual = anoAtual-aniversario.ano
+        } else idadeAtual = (anoAtual-aniversario.ano)-1
+        
+        return (idadeAtual)
+    }
+
 
     const dadosPessoais = [
-        { id: 1, label: "Idade", dado: "31 anos" },
+        { id: 1, label: "Idade", 
+            dado: `${idade()} anos`},
         { id: 2, label: "Estado Civil", dado: "Casado" },
         { id: 3, label: "Nacionalidade", dado: "Brasileira" },
         { id: 4, label: "Naturalidade", dado: "Sorocaba-SP" },

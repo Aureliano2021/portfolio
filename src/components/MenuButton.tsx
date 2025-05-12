@@ -1,12 +1,6 @@
+import { menuItems } from "@/data/menuItems";
+
 export const MenuButton = ({setActiveButton}: { setActiveButton: (id: number) => void }) => {
-    const menuItems = [
-        {id: 1, name: "Início"},
-        {id: 2, name: "Sobre Mim"},
-        {id: 3, name: "Portfólio"},
-        {id: 4, name: "Serviços"},
-        {id: 5, name: "Contato"},
-        {id: 6, name: "Currículo"}
-    ];
 
     const handleItemClick = (item: { id: number; name: string}) => {
         setActiveButton(item.id)

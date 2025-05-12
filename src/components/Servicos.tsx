@@ -39,7 +39,7 @@ export const Servicos = ({ setActiveButton }: { setActiveButton: (id: number) =>
               <p className="text-md text-gray-300 mb-2">{service.description}</p>
               <ul>
                 {service.tecnology.map((tech, index) => (
-                  <li key={index} className="text-sm text-gray-400">
+                  <li key={index+10} className="text-sm text-gray-400">
                     - {tech}
                   </li>
                 ))}

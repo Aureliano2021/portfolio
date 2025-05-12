@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
@@ -21,6 +21,10 @@ export const Contato = () => {
                     (result) => {
                         console.log("E-mail enviado com sucesso:", result.text);
                         alert("E-mail enviado com sucesso!");
+                        setInputNameValue("")
+                        setInputEnterprise("")
+                        setInputEmail("")
+                        setInputMessage("")
                     },
                     (error) => {
                         console.error("Erro ao enviar o e-mail:", error.text);
@@ -34,6 +38,26 @@ export const Contato = () => {
         window.open("https://api.whatsapp.com/send?phone=5587991081827", "_blank");
     };
 
+    const [inputNameValue, setInputNameValue] = useState("");
+    const [inputEnterprise, setInputEnterprise] = useState("");
+    const [inputEmail, setInputEmail] = useState("");
+    const [inputMessage, setInputMessage] = useState("");
+
+    const handleInputNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputNameValue(e.target.value)
+    }
+
+    const handleInputEnterpriseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputEnterprise(e.target.value)
+    }
+
+    const handleInputEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputEmail(e.target.value)
+    }
+
+    const handleInputMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setInputMessage(e.target.value)
+    }
 
     return (
         <div className="flex items-center justify-center h-full bg-gray-900 text-white">
@@ -46,12 +70,15 @@ export const Contato = () => {
                         value="Contato feito pelo portfólio"
                         name="title"
                         className="hidden"
+                        readOnly
                     />
                     <label className="mb-2">Nome</label>
                     <input
                         type="text"
                         name="name"
                         className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
+                        value={inputNameValue}
+                        onChange={handleInputNameChange}
                         required
                     />
                     <div className="grid grid-cols-2">
@@ -61,6 +88,8 @@ export const Contato = () => {
                                 type="text"
                                 name="enterprise"
                                 className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
+                                value={inputEnterprise}
+                                onChange={handleInputEnterpriseChange}
                                 required
                             />
                         </div>
@@ -70,6 +99,8 @@ export const Contato = () => {
                                 type="email"
                                 name="email"
                                 className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
+                                value={inputEmail}
+                                onChange={handleInputEmailChange}
                                 required
                             />
                         </div>
@@ -78,12 +109,14 @@ export const Contato = () => {
                     <textarea
                         name="message"
                         className="p-2 mb-4 border border-gray-600 rounded bg-gray-700 text-white"
+                        value={inputMessage}
+                        onChange={handleInputMessageChange}
                         rows={5}
                         required
                     ></textarea>
                     <button
                         type="submit"
-                        className="p-2 bg-blue-600 hover:bg-blue-700 rounded text-white font-bold"
+                        className="p-2 bg-blue-600 hover:bg-blue-700 rounded text-white font-bold cursor-pointer"
                     >
                         Enviar
                     </button>

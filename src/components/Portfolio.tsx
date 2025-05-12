@@ -10,9 +10,8 @@ export const Portfolio = () => {
     const projetosList = [
         { id: 1, title: "Quiz", shortDescription: "Projeto de um Quiz, exibindo resultado final usando ReactJS com NextJS.", link: "https://quiz-liard-zeta.vercel.app/", codigo: "https://github.com/Aureliano2021/quiz" },
         { id: 2, title: "Currículo", shortDescription: "Projeto de currículo profissional usando HTML5, CSS3, JavaScript e TypeScript.", link: "https://aureliano2021.github.io/", codigo: "https://github.com/Aureliano2021/aureliano2021.github.io" },
-        { id: 3, title: "...", shortDescription: "...", link: "#", codigo: "#" },
-        { id: 4, },
-        { id: 5 }
+        { id: 3, title: "Bateria JavaScript", shortDescription: "Projeto de Bateria emitindo soms, código feito com JavaScript.", link: "https://bateriajavascript.vercel.app/", codigo: "https://github.com/Aureliano2021/Bateria" },
+        {id: 4, title: "Clima API", shortDescription: "Projeto para dizer o clima de uma cidade usando api OpenWeather", link: "https://clima-api-zeta.vercel.app/", codigo:"https://github.com/Aureliano2021/ClimaAPI"}
     ]
 
     return (

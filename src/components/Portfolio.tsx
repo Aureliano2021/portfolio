@@ -9,9 +9,14 @@ export const Portfolio = () => {
 
     const projetosList = [
         { id: 1, title: "Quiz", shortDescription: "Projeto de um Quiz, exibindo resultado final usando ReactJS com NextJS.", link: "https://quiz-liard-zeta.vercel.app/", codigo: "https://github.com/Aureliano2021/quiz" },
-        { id: 2, title: "Currículo", shortDescription: "Projeto de currículo profissional usando HTML5, CSS3, JavaScript e TypeScript.", link: "https://aureliano2021.github.io/", codigo: "https://github.com/Aureliano2021/aureliano2021.github.io" },
-        { id: 3, title: "Bateria JavaScript", shortDescription: "Projeto de Bateria emitindo soms, código feito com JavaScript.", link: "https://bateriajavascript.vercel.app/", codigo: "https://github.com/Aureliano2021/Bateria" },
-        {id: 4, title: "Clima API", shortDescription: "Projeto para dizer o clima de uma cidade usando api OpenWeather", link: "https://clima-api-zeta.vercel.app/", codigo:"https://github.com/Aureliano2021/ClimaAPI"}
+        {id: 2, title: "Galeria React", shortDescription: "Projeto de uma Galeria de fotos feito em React", link: "https://galeria-react-sable.vercel.app/", codigo: "https://github.com/Aureliano2021/Galeria-React"},
+        { id: 3, title: "Currículo", shortDescription: "Projeto de currículo profissional usando HTML5, CSS3, JavaScript e TypeScript.", link: "https://aureliano2021.github.io/", codigo: "https://github.com/Aureliano2021/aureliano2021.github.io" },
+        {id: 4, title: "Pizza JavaScript", shortDescription: "Projeto de vendas de pizza usando JavaScript", link: "https://pizza-javascript.vercel.app/", codigo: "https://github.com/Aureliano2021/Pizza-JavaScript"},
+        { id: 5, title: "Bateria JavaScript", shortDescription: "Projeto de Bateria emitindo soms, código feito com JavaScript.", link: "https://bateriajavascript.vercel.app/", codigo: "https://github.com/Aureliano2021/Bateria" },
+        {id: 6, title: "Clima API", shortDescription: "Projeto para dizer o clima de uma cidade usando api OpenWeather", link: "https://clima-api-zeta.vercel.app/", codigo:"https://github.com/Aureliano2021/ClimaAPI"},
+        {id: 7, title: "Jogo da Velha", shortDescription: "Projeto de Jogo da Velha com interface usando JavaScript", link: "https://jogo-da-velha-five-mocha.vercel.app/", codigo: "https://github.com/Aureliano2021/Jogo-da-Velha"},
+        {id: 8, title: "Relógio Analógico/Digital", shortDescription: "Projeto de um relógio analógico e digital usando JavaScript, HTML e CSS",link: "https://clock-ad.vercel.app/", codigo: "https://github.com/Aureliano2021/ClockAD"}
+        
     ]
 
     return (

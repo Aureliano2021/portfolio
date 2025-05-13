@@ -2,29 +2,31 @@ import { motion } from "framer-motion";
 
 export const Curriculo = () => {
     const hoje = new Date();
-    
+
     const idade = () => {
         let diaHoje = hoje.getDate();
         let mesAtual = hoje.getMonth();
         let anoAtual = hoje.getFullYear();
-        let idadeAtual:number;
+        let idadeAtual: number;
         const aniversario = {
             dia: 22, mes: 3, ano: 1994,
         };
 
-        if (mesAtual >= aniversario.mes){
-            if (mesAtual == aniversario.mes){
-                diaHoje >= aniversario.dia ? idadeAtual = anoAtual-aniversario.ano : idadeAtual = (anoAtual-aniversario.ano)-1
-            } else idadeAtual = anoAtual-aniversario.ano
-        } else idadeAtual = (anoAtual-aniversario.ano)-1
-        
+        if (mesAtual >= aniversario.mes) {
+            if (mesAtual == aniversario.mes) {
+                diaHoje >= aniversario.dia ? idadeAtual = anoAtual - aniversario.ano : idadeAtual = (anoAtual - aniversario.ano) - 1
+            } else idadeAtual = anoAtual - aniversario.ano
+        } else idadeAtual = (anoAtual - aniversario.ano) - 1
+
         return (idadeAtual)
     }
 
 
     const dadosPessoais = [
-        { id: 1, label: "Idade", 
-            dado: `${idade()} anos`},
+        {
+            id: 1, label: "Idade",
+            dado: `${idade()} anos`
+        },
         { id: 2, label: "Estado Civil", dado: "Casado" },
         { id: 3, label: "Nacionalidade", dado: "Brasileira" },
         { id: 4, label: "Naturalidade", dado: "Sorocaba-SP" },
@@ -111,92 +113,92 @@ export const Curriculo = () => {
     ]
 
     return (
-        <motion.div className="flex flex-col items-center justify-center flex-grow" initial={{ opacity: 0}} animate={{ opacity: 1, y:0 }} exit={{ opacity: 0}} transition={{ duration: 1 }}>
-        <div className="flex">
-            <div className="flex-1/3 flex flex-col justify-center items-center h-screen p-4 bg-gray-700">
-                <div className="w-30 h-30 bg-cover bg-top rounded-full my-4" style={{ backgroundImage: "url('/media/perfil.jpg')" }}></div>
-                <h1 className="text-xl font-semibold mb-8">Aureliano Amorim de Oliveira</h1>
-                <div className="text-sm text- p-2 bg-gray-900 rounded-lg">
-                    <table>
-                        <tbody>
-                            {dadosPessoais.map((item) => (
-                                <tr key={item.id} className="border-b border-gray-700 text-gray-500 last:border-gray-900">
-                                    <td className="p-2">{item.label}</td>
-                                    <td className="p-2">{item.dado}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div className="grid grid-cols-1 justify-center items-center flex-1/3 px-4 text-gray-300">
-                <div className="flex flex-col py-2 justify-center items-center rounded-lg bg-gray-700">
-                    <h2 className="text-lg font-semibold">Objetivo</h2>
-                    <p className="text-center text-sm">Em busca de oportunidade como Desenvolvedor de Softwares ou uma oportunidade na área de Tecnologia da Informação.</p>
-                </div>
-                <div className="flex flex-col py-2 justify-center items-center rounded-lg bg-gray-700">
-                    <h2 className="text-lg font-semibold">Histórico Profissional</h2>
-                    <div className="text-center text-sm">
-                        {xp.map((exp) => (
-                            <ul className="p-2" key={exp.id}>
-                                <li>{exp.cargo}</li>
-                                <li>{exp.empresa}</li>
-                                <li>{exp.periodo}</li>
-                            </ul>
-                        ))}
+        <motion.div className="flex flex-col items-center justify-center flex-grow lg:flex-row" initial={{ opacity: 0 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
+            <div className="flex flex-col w-full lg:flex-row">
+                <div className="flex flex-col min-w-xs justify-center items-center h-screen p-4 bg-gray-700 flex-1/3">
+                    <div className="w-30 h-30 min-w-30 min-h-30 bg-cover bg-top rounded-full my-4" style={{ backgroundImage: "url('/media/perfil.jpg')" }}></div>
+                    <h1 className="text-xl text-center font-semibold mb-8">Aureliano Amorim de Oliveira</h1>
+                    <div className="text-sm p-2 bg-gray-900 rounded-lg">
+                        <table>
+                            <tbody>
+                                {dadosPessoais.map((item) => (
+                                    <tr key={item.id} className="border-b border-gray-700 text-gray-500 last:border-gray-900">
+                                        <td className="p-1">{item.label}</td>
+                                        <td className="p-1 wrap-anywhere">{item.dado}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div className="flex flex-col py-2 justify-center items-center rounded-lg bg-gray-700">
-                    <h2 className="text-lg font-semibold">Formação Acadêmica</h2>
-                    <div className="text-center text-sm">
-                        {academy.map((graduate) => (
-                            <ul className="p-2" key={graduate.id}>
-                                <li>{graduate.curso}</li>
-                                <li>{graduate.instituicao}</li>
-                                <li>{graduate.estado}</li>
-                            </ul>
-                        ))}
+                <div className="grid grid-cols-1 min-w-3xs justify-center items-center flex-1/3 text-gray-300 lg:px-4">
+                    <div className="flex flex-col py-2 justify-center items-center  bg-gray-700 lg:rounded-lg">
+                        <h2 className="text-lg font-semibold">Objetivo</h2>
+                        <p className="text-center text-sm">Em busca de oportunidade como Desenvolvedor de Softwares ou uma oportunidade na área de Tecnologia da Informação.</p>
+                    </div>
+                    <div className="flex flex-col py-2 justify-center items-center w-full bg-gray-700 lg:rounded-lg">
+                        <h2 className="text-lg text-center font-semibold">Histórico Profissional</h2>
+                        <div className="text-center text-sm">
+                            {xp.map((exp) => (
+                                <ul className="p-2" key={exp.id}>
+                                    <li>{exp.cargo}</li>
+                                    <li>{exp.empresa}</li>
+                                    <li>{exp.periodo}</li>
+                                </ul>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="flex flex-col py-2 justify-center items-center bg-gray-700 lg:rounded-lg">
+                        <h2 className="text-lg text-center font-semibold">Formação Acadêmica</h2>
+                        <div className="text-center text-sm">
+                            {academy.map((graduate) => (
+                                <ul className="p-2" key={graduate.id}>
+                                    <li>{graduate.curso}</li>
+                                    <li>{graduate.instituicao}</li>
+                                    <li>{graduate.estado}</li>
+                                </ul>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="max-h-screen flex-1/3 text-center  text-gray-300 lg:p-1">
+                    <div className="flex flex-col py-2 justify-center items-center bg-gray-700 lg:rounded-lg">
+                        <h2 className="text-lg font-semibold">Certificações</h2>
+                        <table>
+                            <thead className="text-md">
+                                <tr>
+                                    <th className="px-2">Curso</th>
+                                    <th className="px-2">Inst.</th>
+                                    <th className="px-2">CH</th>
+                                    <th className="px-2">Conclusão</th>
+                                    <th className="px-2">Certificado</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-sm">
+                                {certifications.map((certification) => (
+                                    <tr key={certification.id} className="mb-2">
+                                        <td className="p-2">{certification.curso}</td>
+                                        <td>{certification.instituicao}</td>
+                                        <td>{certification.ch}</td>
+                                        <td>{certification.ano}</td>
+                                        <td><a className="p-1.5 bg-blue-500 rounded-lg hover:bg-blue-600" href={certification.link} target="_blank">Link</a></td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="h-50 flex flex-col justify-center items-center bg-gray-700 lg:rounded-lg lg:my-2 lg:py-2">
+                        <a
+                            href="/media/curriculo.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="py-6 px-10 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded"
+                        >
+                            Abrir PDF
+                        </a>
                     </div>
                 </div>
             </div>
-            <div className="max-h-screen flex-1/3 text-center p-1 text-gray-300">
-                <div className="flex flex-col py-2 justify-center items-center rounded-lg bg-gray-700">
-                    <h2 className="text-lg font-semibold">Certificações</h2>
-                    <table>
-                        <thead className="text-md">
-                            <tr>
-                                <th className="px-2">Curso</th>
-                                <th className="px-2">Instituição</th>
-                                <th className="px-2">CH</th>
-                                <th className="px-2">Conclusão</th>
-                                <th className="px-2">Certificado</th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-sm">
-                            {certifications.map((certification) => (
-                                <tr key={certification.id} className="mb-2">
-                                    <td className="p-2">{certification.curso}</td>
-                                    <td>{certification.instituicao}</td>
-                                    <td>{certification.ch}</td>
-                                    <td>{certification.ano}</td>
-                                    <td><a className="p-1.5 bg-blue-500 rounded-lg hover:bg-blue-600" href={certification.link} target="_blank">Link</a></td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-                <div className="h-50 flex flex-col my-2 py-2 justify-center items-center rounded-lg bg-gray-700">
-                    <a
-                        href="/media/curriculo.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="py-6 px-10 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded"
-                    >
-                        Abrir PDF
-                    </a>
-                </div>
-            </div>
-        </div>
         </motion.div>
     )
 }

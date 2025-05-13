@@ -7,7 +7,7 @@ export const MenuButton = ({setActiveButton}: { setActiveButton: (id: number) =>
     }
 
     return (
-        <nav className="h-screen flex flex-col items-center">
+        <nav className=" min-w-52 h-screen flex flex-col items-center">
             <div className="w-40 h-40 bg-cover bg-center rounded-full my-4" style={{ backgroundImage: "url('/media/Logo.jpeg')" }}>
             </div>
             <ul className="w-full flex flex-grow flex-col justify-center items-center text-center border-b">

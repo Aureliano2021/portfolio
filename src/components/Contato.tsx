@@ -60,10 +60,10 @@ export const Contato = () => {
     }
 
     return (
-        <div className="flex items-center justify-center h-full bg-gray-900 text-white">
-            <div className="flex flex-col flex-2/3 items-center justify-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center h-full bg-gray-900 text-white">
+            <div className="flex flex-col flex-2/3 items-center justify-center p-4">
                 <motion.div className="flex flex-col items-center justify-center flex-grow" initial={{ opacity: 0 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
-                    <h1 className="text-4xl font-bold mb-6">Entre em Contato</h1>
+                    <h1 className="text-4xl font-bold my-6">Entre em Contato</h1>
                     <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full max-w-lg">
                         <input
                             type="text"

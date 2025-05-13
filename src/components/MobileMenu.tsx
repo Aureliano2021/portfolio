@@ -10,25 +10,25 @@ export const MobileMenu =({setActiveButton}: { setActiveButton: (id: number) => 
         if (!clicou) {
             setClicou(true)
             setRotate90("p-4 -rotate-90 transition duration-300 ease-linear")
-            setDeslize("absolute top-26 right-0 h-4/5 w-4/5 bg-gray-300 opacity-90 pointer-events-auto transition-all duration-300 ease-out")
+            setDeslize("absolute top-26 right-0 h-4/5 w-4/5 bg-gray-300 opacity-90 pointer-events-auto transition-all duration-300 ease-out z-100")
         }
         if (clicou) {
             setClicou(false)
             setRotate90("p-4 rotate-0 transition duration-300 ease-linear")
-            setDeslize("absolute top-26 right-0 h-4/5 w-3/4 bg-gray-300 opacity-0 pointer-events-none transition-all duration-300 ease-out")
+            setDeslize("absolute top-26 right-0 h-4/5 w-3/4 bg-gray-300 opacity-0 pointer-events-none transition-all duration-300 ease-out z-100")
         }
     }
 
     const handleItemClick = (item: { id: number; name: string}) => {
         setActiveButton(item.id)
-        setDeslize("absolute top-26 right-0 h-4/5 w-3/4 bg-gray-300 opacity-0 pointer-events-none transition-all duration-300 ease-out")
+        setDeslize("absolute top-26 right-0 h-4/5 w-3/4 bg-gray-300 opacity-0 pointer-events-none transition-all duration-300 ease-out z-100")
         setRotate90("p-4 rotate-0 transition duration-300 ease-linear")
     }
 
     return (
         <div>
             <nav className="w-full flex justify-between items-center p-2">
-                <div className="w-20 h-20 bg-cover bg-center rounded-full p-4" style={{ backgroundImage: "url('/media/Logo.jpeg')" }}></div>
+                <div onClick={() => setActiveButton(1)} className="w-20 h-20 bg-cover bg-center rounded-full p-4" style={{ backgroundImage: "url('/media/Logo.jpeg')" }}> </div>
                 <div onClick={handleMenuClick} className={rotate90}>
                     <div className="h-2 w-12 bg-gray-900 m-2 rounded-lg"></div>
                     <div className="h-2 w-12 bg-gray-900 m-2 rounded-lg"></div>

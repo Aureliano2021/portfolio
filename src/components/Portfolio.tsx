@@ -3,9 +3,11 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 
-export const Portfolio = () => {
+export const Portfolio = ({screen}: {screen: number}) => {
 
     const projetosList = [
         { id: 1, title: "Quiz", shortDescription: "Projeto de um Quiz, exibindo resultado final usando ReactJS com NextJS.", link: "https://quiz-liard-zeta.vercel.app/", codigo: "https://github.com/Aureliano2021/quiz", image: "/media/Quiz.jpg" },
@@ -19,14 +21,36 @@ export const Portfolio = () => {
         
     ]
 
+    const [chkScreen, setchkScreen] = useState(3)
+
+    const checkScreen = () => {
+        if (screen !== null && screen < 1024){
+            return setchkScreen(1)
+        } else return setchkScreen(3)
+    }
+
+    useEffect(() => {
+        checkScreen();
+
+        const handleResize = () => {
+            checkScreen();
+        };
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize",handleResize)
+        };
+    }, [screen])
+
     return (
         <div className="flex flex-col justify-center items-center p-10 relative">
             <h1 className="text-4xl font-bold mb-6">Portfólio</h1>
-            <div className="w-full max-w-screen-lg overflow-hidden">
+            <motion.div className="w-full max-w-screen-lg overflow-hidden" initial={{ opacity: 0}} animate={{ opacity: 1, y:0 }} exit={{ opacity: 0}} transition={{ duration: 1 }}>
+            {/*<div className="w-full max-w-screen-lg overflow-hidden">*/}
                 <Swiper
                     modules={[Navigation, Pagination]}
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={chkScreen}
                     navigation={{
                         prevEl: ".swiper-button-prev",
                         nextEl: ".swiper-button-next",
@@ -61,7 +85,8 @@ export const Portfolio = () => {
                 </div>
                 {/* Pagination fora do conteúdo */}
                 <div className="custom-pagination absolute -bottom-10 left-0 right-0 flex justify-center"></div>
-            </div>
+            {/*</div>*/}
+            </motion.div>
         </div>
     )
 }

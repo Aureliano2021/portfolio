@@ -32,16 +32,16 @@ const Page = () => {
     }
   }, [])
 
-  const structure = `flex ${((screen !== null && screen < 750)) && ("flex-col")} w-screen h-screen overflow-x-hidden`
+  const structure = `flex ${((screen !== null && screen < 750)) && ("flex-col")} w-screen h-screen`
 
   return(
-    <div className={structure}>
-      {((screen !== null && screen >= 750)) && (
+    <div className={"flex flex-col min-h-screen bg-gray-900 lg:flex-row"}>
+      {((screen !== null && screen >= 1024)) && (
         <div className="w-64 h-full bg-gray-500 text-white">
           <MenuButton setActiveButton={setActiveButton}/>
         </div>
       )}
-      {((screen !== null && screen < 750)) && (
+      {((screen !== null && screen < 1024)) && (
         <div className="w-full h-28 bg-gray-500 text-white">
           <MobileMenu setActiveButton={setActiveButton}/>
         </div>
@@ -50,7 +50,7 @@ const Page = () => {
         <AnimatePresence mode="wait">
         {activeButton === 1 && (<InicioSection setActiveButton={setActiveButton}/>)}
         {activeButton === 2 && (<SobreMim />)}
-        {activeButton === 3 && (<Portfolio />)}
+        {activeButton === 3 && screen !== null && <Portfolio screen={screen}/>}
         {activeButton === 4 && (<Servicos setActiveButton={setActiveButton}/>)}
         {activeButton === 5 && (<Contato />)}
         {activeButton === 6 && (<Curriculo />)}

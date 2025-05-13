@@ -14,10 +14,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Página Pessoal - Aureliano A. de Oliveira",
-  description: "Página com informações pessoais e portfólio de Aureliano A. de Oliveira",	
+  description: "Bem-vindo ao meu portfólio online!",	
   icons: {
     icon: "favicon.ico",
   },
+  openGraph: {
+    title: "Página Pessoal e Portfólio - Aureliano Oliveira",
+    description: "Bem-vindo ao meu portfólio online!",
+    url: "https://aureliano-oliveira.vercel.app",
+    images: [
+      {
+        url: "/media/Logo.jpeg"
+      }  
+    ],
+    type: "website"
+  }
 };
 
 export default function RootLayout({

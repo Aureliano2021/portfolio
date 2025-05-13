@@ -13,30 +13,35 @@ import { MobileMenu } from "@/components/MobileMenu";
 
 const Page = () => {
   const [activeButton, setActiveButton] = useState(1);
-  const [screen, setScreen] = useState(window.innerWidth);
+  const [screen, setScreen] = useState<number | null>(null);
 
   const changeScreen = () => {
+    if (typeof window !== "undefined"){
     setScreen(window.innerWidth)
+    }
   }
 
   useEffect(() => {
+    if (typeof window !== "undefined"){
+      setScreen(window.innerWidth)
       window.addEventListener("resize", changeScreen)
 
       return () => {
         window.addEventListener("resize", changeScreen)
       };
+    }
   }, [])
 
-  const structure = `flex ${screen < 750 && ("flex-col")} w-screen h-screen overflow-x-hidden`
+  const structure = `flex ${((screen !== null && screen < 750)) && ("flex-col")} w-screen h-screen overflow-x-hidden`
 
   return(
     <div className={structure}>
-      {screen >= 750 && (
+      {((screen !== null && screen >= 750)) && (
         <div className="w-64 h-full bg-gray-500 text-white">
           <MenuButton setActiveButton={setActiveButton}/>
         </div>
       )}
-      {screen < 750 && (
+      {((screen !== null && screen < 750)) && (
         <div className="w-full h-28 bg-gray-500 text-white">
           <MobileMenu setActiveButton={setActiveButton}/>
         </div>
